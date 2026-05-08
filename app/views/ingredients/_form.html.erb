@@ -21,6 +21,11 @@
     <%= form.number_field :quantity, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
+  <div class="my-5">
+    <%= form.label :photo %>
+    <%= form.file_field :photo, accept: "image/*", class: "block mt-2" %>
+  </div>
+
   <%= form.hidden_field :recipe_id %>
 
   <div class="inline">

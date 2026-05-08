@@ -9,10 +9,12 @@
     <%= ingredient.quantity %>
   </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Recipe:</strong>
-    <%= ingredient.recipe_id %>
-  </p>
+  <% if ingredient.photo.attached? %>
+    <div class="my-5">
+      <strong class="block font-medium mb-1">Photo:</strong>
+      <%= image_tag ingredient.photo, alt: "Photo of #{ingredient.name}", class: "max-w-xs rounded-lg" %>
+    </div>
+  <% end %>
 
   <% if action_name != "show" %>
     <%= link_to "Show this ingredient", ingredient, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>

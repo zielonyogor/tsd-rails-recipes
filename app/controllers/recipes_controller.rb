@@ -8,7 +8,6 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1 or /recipes/1.json
   def show
-    @recipe = Recipe.find(params[:id])
     @ingredient = Ingredient.new(recipe: @recipe)
   end
 
@@ -19,11 +18,13 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1/edit
   def edit
+    authorize @recipe
   end
 
   # POST /recipes or /recipes.json
   def create
     @recipe = Recipe.new(recipe_params)
+    @recipe.creator = current_user
 
     respond_to do |format|
       if @recipe.save
@@ -38,6 +39,7 @@ class RecipesController < ApplicationController
 
   # PATCH/PUT /recipes/1 or /recipes/1.json
   def update
+    authorize @recipe
     respond_to do |format|
       if @recipe.update(recipe_params)
         format.html { redirect_to recipe_url(@recipe), notice: "Recipe was successfully updated." }
@@ -51,6 +53,7 @@ class RecipesController < ApplicationController
 
   # DELETE /recipes/1 or /recipes/1.json
   def destroy
+    authorize @recipe
     @recipe.destroy
 
     respond_to do |format|
