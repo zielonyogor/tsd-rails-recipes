@@ -29,3 +29,30 @@
   padding: 0 !important;
   max-width: 100% !important;
 }
+
+.trix-content ul,
+trix-editor ul {
+  list-style-type: disc;
+  margin: 1em 0;
+  padding-left: 1.5em;
+}
+
+.trix-content ol,
+trix-editor ol {
+  list-style-type: decimal;
+  margin: 1em 0;
+  padding-left: 1.5em;
+}
+
+.trix-content blockquote,
+trix-editor blockquote {
+  border-left: 4px solid #d1d5db;
+  color: #4b5563;
+  margin: 1em 0;
+  padding-left: 1em;
+}
+
+.trix-content li,
+trix-editor li {
+  margin: 0.25em 0;
+}

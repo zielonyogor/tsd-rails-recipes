@@ -12,4 +12,4 @@ user_2 = User.create(email: "user_2@example.com", password: "password", password
 Recipe.create(title: "Pancakes", description: "Delicious pancakes", creator: user)
 Recipe.create(title: "Pasta", description: "Delicious pasta", creator: user)
 Recipe.create(title: "Pizza", description: "Delicious pizza", creator: user)
-Recipe.create(title: "Ramen", description: "Delicious ramen", creator: user_2)
+Recipe.create(title: "Ramen", description: "Delicious ramen", creator: user_2, content: "Rich text example with **bold** and _italic_ formatting.")
