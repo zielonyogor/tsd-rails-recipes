@@ -26,7 +26,7 @@ class IngredientsController < ApplicationController
       if @ingredient.save
         format.html { redirect_to recipe_url(@ingredient.recipe), notice: "Ingredient was successfully created." }
       else
-        format.html { redirect_to recipe_url(@ingredient.recipe), alert: "Error adding ingredient." }
+        format.html { redirect_to recipe_url(@ingredient.recipe), alert: @ingredient.errors.full_messages.to_sentence }
       end
     end
   end
