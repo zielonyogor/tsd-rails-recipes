@@ -7,7 +7,9 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 user = User.create(email: "user@example.com", password: "password", password_confirmation: "password")
+user_2 = User.create(email: "user_2@example.com", password: "password", password_confirmation: "password")
 
 Recipe.create(title: "Pancakes", description: "Delicious pancakes", creator: user)
 Recipe.create(title: "Pasta", description: "Delicious pasta", creator: user)
 Recipe.create(title: "Pizza", description: "Delicious pizza", creator: user)
+Recipe.create(title: "Ramen", description: "Delicious ramen", creator: user_2)
